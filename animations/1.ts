@@ -68,8 +68,6 @@ function showStripPixel(idx: number) {
     rightStrip.setPixelColor(idx, 0xff0000)
     leftStrip.setPixelColor(idx, 0xff0000)
 }
-let leftStrip: light.NeoPixelStrip = null
-let rightStrip: light.NeoPixelStrip = null
 function printStrip(strip: light.NeoPixelStrip) {
     console.log("-------------")
     for (let i = 0; i < strip.length(); i++) {
@@ -77,9 +75,14 @@ function printStrip(strip: light.NeoPixelStrip) {
     }
     console.log("-------------")
 }
+
+let leftStrip: light.NeoPixelStrip = null
+let rightStrip: light.NeoPixelStrip = null
+let frameTime = 300
+
 rightStrip = light.createStrip(pins.A1, 4)
 leftStrip = light.createStrip(pins.A6, 4)
-let frameTime = 300
+
 forever(function () {
     if (input.switchRight()) {
         leftStrip.showAnimationFrame(light.rainbowAnimation)

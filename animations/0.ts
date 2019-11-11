@@ -136,9 +136,11 @@ function printStrip(strip: light.NeoPixelStrip) {
 
 let leftStrip: light.NeoPixelStrip = null
 let rightStrip: light.NeoPixelStrip = null
+let frameTime = 300
+
 rightStrip = light.createStrip(pins.A1, 4)
 leftStrip = light.createStrip(pins.A6, 4)
-let frameTime = 300
+
 forever(function () {
     if (input.switchRight()) {
         leftStrip.showAnimationFrame(light.rainbowAnimation)
