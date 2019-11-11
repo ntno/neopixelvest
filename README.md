@@ -1,4 +1,4 @@
-# neopixelvest
+# pixel-vest
 neopixel animations in makecode
 
 
